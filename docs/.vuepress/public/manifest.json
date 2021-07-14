@@ -1,0 +1,25 @@
+{
+    "name": "小明的博客",
+    "short_name": "小明",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#2196f3",
+    "description": "小明的个人主页",
+    "theme_color": "blue",
+    "icons": [
+      {
+        "src": "/icons/01.jpg",
+        "sizes": "144x144",
+        "type": "image/jpg"
+      }
+    ],
+    "related_applications": [
+      {
+        "platform": "web"
+      },
+      {
+        "platform": "play",
+        "url": "/icons/01.jpg"
+      }
+    ]
+  }
