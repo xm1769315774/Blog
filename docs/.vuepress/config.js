@@ -18,24 +18,31 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/02.jpg' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
-  plugins: [//插件
-    [
-      '@vuepress/last-updated',
-      {
+  plugins: {//插件
+  '@vuepress/last-updated':{
         transformer: (timestamp, lang) => {
           moment.locale("zh-cn")//lang表示多语言模式
           return moment(timestamp).format("LLLL")//格式化时间为本地格式
         }
-      }
-    ],
-    ['@vuepress/pwa',{
+      },
+    '@vuepress/pwa':{
           serviceWorker: true,
           updatePopup: {
             message: "发现新内容可用",
             buttonText: "刷新"
            }
-        }],
-  ],
+        },
+    '@vssue/vuepress-plugin-vssue': {//vssue评论插件
+          // 设置 `platform` 而不是 `api`
+          platform: 'github-v4',
+          // 其他的 Vssue 配置
+          owner: 'xm1769315774.github.io',
+          repo: '/',
+          clientId: '931b356c4ab2ed1f4e65',
+          clientSecret: 'f5ec70e1085ed6dea0807783c2589bcd78500210',
+          autoCreateIssue:true
+        }
+      },
   themeConfig: {
     lastUpdated: '更新时间', // string | boolean最后更新时间说明
     logo: '/assets/imgs/head.jpg',  // 左上角logo
