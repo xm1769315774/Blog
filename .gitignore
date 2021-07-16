@@ -23,3 +23,6 @@ pnpm-debug.log*
 *.sw?
 # vuepress temp file
 .temp
+
+# 隐藏私密信息
+secret.js
