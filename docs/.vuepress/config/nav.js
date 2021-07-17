@@ -6,11 +6,19 @@ module.exports=[//导航栏
     { text: '留言板', link: '/message/' },
     { text: '关于', link: '/about/' },
     {
-      text: 'web前端',//二级菜单
+      text: '大前端',//二级菜单
       items: [
         { items: [
-              {text:"JavaScript",link:"/webDevelopment/JavaScript/"},//分组里边的东西
-              {text:"HTML",link:"/webDevelopment/HTML/"},//分组里边的东西
+              {text:"JavaScript",link:"/frontEnd/JavaScript/"},//分组里边的东西
+              {text:"HTML",link:"/frontEnd/HTML/"},//分组里边的东西
+        ] },
+      ]
+    },
+    {
+      text: '后端',//二级菜单
+      items: [
+        { items: [
+              {text:"NodeJS",link:"/backEnd/NodeJS/"},//分组里边的东西
         ] },
       ]
     },

@@ -1,8 +1,8 @@
 ---
 title: countUp
 ---
-::: tip 今年是
-<countUp :endValue="2020"/>
+::: tip 目前是
+<countUp :endValue="2021"/>
 :::
 
 ::: details 点击查看该代码
