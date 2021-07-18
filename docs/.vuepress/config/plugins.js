@@ -86,6 +86,38 @@ module.exports={//插件
                   // opacityOnHover: 0.8
                 }
               }
+            },
+            "flexsearch":{//搜索框插件
+                //插件自定义选项
+                maxSuggestions: 10,     //多少搜索建议，以显示在菜单上，默认是10
+                searchPaths: ['path1', 'path2'],     // 要搜索的路径数组，将其保留为空以搜索所有文档。
+                searchHotkeys: ['s'],      // 激活搜索输入的热键，默认为“s”，但您可以添加更多。
+                searchResultLength: 60,     // 建议结果文本的字符长度，默认为 60 个字符。
+                //默认 FlexSearch 选项
+                //要覆盖默认选项，您可以在 https://github.com/nextapps-de/flexsearch 查看可用选项
+                search_options: {
+                  encode: "icase",
+                  tokenize: "forward",
+                  resolution: 9,
+                  doc: {
+                    id: "key",
+                    field: ["title", "content", "headers"],
+                  }
+                }
+
+            },
+            "vuepress-plugin-nuggets-style-copy":{//复制弹窗插件
+              copyText: "复制代码",
+              tip: {
+                  content: "复制成功!"
+              }
+            },
+            "dynamic-title":{//趣味标题插件
+              showIcon: "/assets/imgs/favicon.ico",
+              showText: "(/≧▽≦/)咦！又好了！",
+              hideIcon: "/assets/imgs/favicon.ico",
+              hideText: "(●—●)喔哟，崩溃啦！",
+              recoverTime: 2000
             }
 
         }
