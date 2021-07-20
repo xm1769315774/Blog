@@ -1,16 +1,14 @@
 module.exports={
-    "/life/":[
-      "day01",
-      "day02"
-    ],
 
+  '/life/': [
+      
+    ],
     "/music/":[
       "music01"
     ],
-    "/":[
-      "",
-      "about",
-      "life",
-      "music",
+    "/frontEnd/":[
+        "HTML",
+        "JavaScript",
+        
     ]
   }

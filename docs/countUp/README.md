@@ -1,5 +1,7 @@
 ---
 title: countUp
+tags:
+- countUp
 ---
 ::: tip 目前是
 <countUp :endValue="2021"/>

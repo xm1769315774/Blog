@@ -21,8 +21,8 @@ module.exports = {
     logo: '/assets/imgs/head.jpg',  // 左上角logo
     nav: navConfig,
     //auto全局自动生成侧边栏
+    sidebar:sidebarConfig,
     subSidebar: 'auto',//在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
-    // sidebar:sidebarConfig
     record: 'ICP 备案文案',
     recordLink: 'ICP 备案指向链接',
     cyberSecurityRecord: '公安部备案文案',

@@ -1,11 +1,11 @@
 // 引入时间处理的插件moment
 const moment = require('moment');
+moment.locale("zh-cn")//lang表示多语言模式
 // 引入私密信息文件
 const secretConfig=require("./secret");
 module.exports={//插件
     '@vuepress/last-updated':{
-          transformer: (timestamp, lang) => {
-            moment.locale("zh-cn")//lang表示多语言模式
+          transformer: (timestamp) => {
             return moment(timestamp).format("LLLL")//格式化时间为本地格式
           }
         },
@@ -19,6 +19,7 @@ module.exports={//插件
       '@vssue/vuepress-plugin-vssue': {//vssue评论插件
             // 设置 `platform` 而不是 `api`
             platform: 'github-v4',
+            locale: 'zh', //语言
             // 其他的 Vssue 配置
             owner: 'xm1769315774',
             repo: 'Blog.git',
@@ -57,7 +58,7 @@ module.exports={//插件
                 lrcType: 3,//设置 lrc 歌词解析模式3 | 1 | 0（0：禁用 lrc 歌词，1：lrc 格式的字符串，3：lrc 文件 url）
              },
             },
-            "vuepress-plugin-boxx":{},//博客文章自动随机添加名人名言或其他
+            //"vuepress-plugin-boxx":{},//博客文章自动随机添加名人名言或其他
             'vuepress-plugin-helper-live2d': {//uePress集成Live2D看板娘 Live2D,右下角卡通人物
               // 是否开启控制台日志打印(default: false)
               log: false,
@@ -104,7 +105,6 @@ module.exports={//插件
                     field: ["title", "content", "headers"],
                   }
                 }
-
             },
             "vuepress-plugin-nuggets-style-copy":{//复制弹窗插件
               copyText: "复制代码",
