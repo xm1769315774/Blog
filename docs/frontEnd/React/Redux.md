@@ -1,5 +1,5 @@
 ---
-title: 仓库
+title: Redux仓库
 date: 2021-06-24
 categories: article
 tags: React
