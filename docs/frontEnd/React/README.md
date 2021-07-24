@@ -106,7 +106,12 @@ react是单向数据流，vue是双向数据流
 
 # 组件书写方式
 
+以往使用最多的是class类式组件，class类式功能完善；函数式出来之后，就是混写，同一个项目中有函数也有class，这是因为函数式组件功能不够完善
+就目前而言，新项目使用函数式稍微多一点，代码量优化，没有this的指向的烦恼，对于直接上手react来说学习的门槛降低了
+
+
 类式组件
+class组件：具备所有组件能力 状态state props 视图 生命周期等等
 ```jsx
 import React, { Component } from 'react'
 
@@ -123,6 +128,68 @@ export default class Layout extends Component {
 ```
 
 函数式组件
+function组件：只具备构建视图 + props(缺状态，缺生命周期)
 ```jsx
+// 只需要定义一个function 然后取个组件的名字，把组件的视图给return出去就可以了
+	export default function Layou(){
+		return  <div>
+					我是函数式组件
+				</div>
+	}
+```
+## stateHook
+useState就是状态hook
+引入useState，让函数拥有了state状态和改变状态的能力，作用等效于state+setState
 
+```jsx
+// 引入useState
+import React,{useState} from 'react'
+
+export default function NumStep() {
+    // 定义一个状态，写法类似于数组的解构，第一个参数为变量名(state)，第二个参数为修改变量的方法，类似于this.setState,右边是定义的变量的默认值
+    let [num,setNum]=useState(0);
+
+    // 点击让这个数+1
+    let add=()=>{
+        setNum(num + 1)
+    }
+    return (
+        <>
+            <button>-</button>
+            <label>{num}</label>
+            <button onClick={add}>+</button>
+        </>
+    )
+}
+
+```
+## EffectHook
+经典的useEffect
+引入useEffect，让函数式组件有了最常用的三个生命周期(componentDidMount组件挂载、componentDidUpdate更新、componentDidWillUnmount即将卸载)
+
+```jsx
+import React,{useState,useEffect} from 'react'
+
+export default function DidUpdateCmpt() {
+    let [name,setName]=useState("张三");
+
+    let changeName=()=>{
+        setName("张三疯")
+    }
+    // 生命周期，DidUpdate
+    useEffect(()=>{
+        console.log("组件初始化加载完成/name的值更新了");
+        let timeId =setInterval(()=>{console.log("定时器");},1000)
+        return ()=>{
+            console.log("组件即将被卸载...在此处进行定时器的移除");
+            clearInterval(timeId)
+        }
+    },[name])
+    return (
+        <>
+            <h1>{name}</h1>
+            <button onClick={changeName}>点击改变name</button>
+        </>
+    )
+}
 ```

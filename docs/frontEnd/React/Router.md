@@ -28,17 +28,20 @@ import {HashRouter,Switch,Route, Redirect} from "react-router-dom";
 ```
 
 - HashRouter | BrowserRouter
-  - 最大的路由容器，内部进行路由规则的排布
+  - 最大的路由容器，内部进行路由规则的排布,类似于vue的`<router-view></router-view>`,哪里需要切屏就在哪里引入这个容器
 - Switch
-  - 路由匹配分支容器，当Route匹配到对应规则的时候，Switch会阻止路由继续往后匹配
+  - 路由匹配分支容器，当Route匹配到对应规则的时候，Switch会阻止路由继续往后匹配。提升匹配性能，只要匹配成功一个Route，立即return(break),不会继续往后匹配，并渲染当前组件。
 - Route
-  - 路由规则组件，匹配路由规则，渲染对应的组件
+  - 路由规则组件，匹配路由规则，渲染对应的组件。path监听一个hash值，component加载对应的组件
+  - Route默认是包含匹配(includes)，只要hash值包含了当前path字符串，就会被匹配到
+  - Route提供了一个属性叫exact，增加这个属性以后，包含匹配变成精准匹配
+  - 最后一个没有path的Route，会作为default路由来使用，类似于vue的，"/*"
 - Redirect
   - 重定向
 - exact
   - 严格模式，exact修饰的Route，url必须完全一致才能匹配成功
 - Link
-  - 跳转链接，在页面上会被渲染成a标签
+  - 跳转链接，在页面上会被渲染成a标签。4.0版本以后，必须套在HashRouter路由容器中使用，方便统一管理。
 - NavLink
   - 对照当前url，符合要求的链接会加上active样式
 

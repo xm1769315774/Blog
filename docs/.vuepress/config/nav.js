@@ -34,6 +34,7 @@ module.exports=[//导航栏
       items: [
         { items: [
               {text:"Markdown",link:"/other/Markdown/"},//分组里边的东西     
+              {text:"git",link:"/other/git/"},//分组里边的东西     
         ] },
       ]
     },
