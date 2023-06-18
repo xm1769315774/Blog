@@ -1,6 +1,6 @@
 ---
 title: git操作
-date: 2021-06-24
+date: 2023-06-18
 categories: article
 tags: git
 ---
@@ -25,6 +25,8 @@ tags: git
 
 # 提交所有修改
 	git commit -m "提交说明"
+
+	msg规范：
 	    feat -- 新增feature
 	    fix -- 修复bug
 	    docs -- 仅仅修改了文档，例如README、CHANGELOG等
@@ -35,11 +37,36 @@ tags: git
 	    chore -- 改变构建流程、或者增加依赖库、工具等
 	    revert -- 回滚到上一个版本
 
+	若commit message错误想重新修改
+		git commit --amend --message="修改的新的提交说明"
+	
 # 提交本地代码
 	git push
 
 #   提交本地代码（若远程没有分支则强制创建）
 	git push origin 分支名:分支名
+
+#  合并本地与线上分支最新代码
+	1、第一种方式，相对可控，方便解决冲突
+		先git fetch origin 远程分支名（把远程仓库的最新代码取回放到FETCH中）
+
+		git merge FETCH (把本地代码和已取得的远程分支最新代码进行合并)
+
+		若有冲突则会提示，直接进行对应的修改，进行冲突的合并解决
+		解决完冲突之后再进行代码的提交
+
+	2、第二种直接进行git pull origin 分支名
+		此种方式相当于直接进行了 git fetch 和 git merge的操作
+		自动合并隐藏过程细节，方便快捷，但是一旦有冲突，不太容易对比差异化代码
+
+		git pull 合并可能会进入vim窗口，常用命令
+		:w 	保存编辑后的文件内容，但不会退出vim编辑器。
+		:q	在未做任何编辑处理而准备退出时，可以使用此命令。如果已经编辑处理过，则不能使用此命令退出。
+		:wq 保存文件内容并退出vim编辑器。
+		:w!	强制写文件，强制覆盖原有文件。
+		:wq! 强制保存文件内容后退出vim编辑器。
+		ZZ	如果已经编辑处理过文件，则保存并退出，否则只是退出。
+		:q!	强制退出vim编辑器，放弃编辑处理的结果。
   
 # 创建新分支并进入
     git checkout -b "分支名"
@@ -74,11 +101,16 @@ tags: git
 		2. git add .
 		3. git commit -m '日志信息——开发者'
 
-# 最后的解决方法
-	假如你不小心在master做了不可回撤的操作，并导致master分支异常
-		将你的修改保存到仓库外界，然后运行命令：
-			git reset --hard origin/master
-				这条命令会让master直接回到当前远程最新的版本
+
+# 查看日志
+	git log  列出所有的提交历史记录，可以上下翻动。
+	git log -n 列出前n条记录
+	git log --stat -n 显示简要的增改行数统计，每次提交文件的变更统计，n表示多少条，可以加上也可以忽略。
+	git log --since=2.days  查看两天前的历史记录
+	git log --author=user  查看user作者的所有提交历史记录
+	git log --grep=feat	查看指定关键字为feat的所有提交
+	git log --committer=name 查看提交者为name的所有历史记录
+	（作者指代码的修改者，提交者指提交代码的人）
 
 # 文件操作
 	查看文件
@@ -94,6 +126,19 @@ tags: git
 			2. 输入【:wq】，然后回车，就能保存退出
 	查看文件内容
 		cat '文件名.后缀'
+
+# 清环境
+	git clean -dfx  此命令会将本地的node_modules .umi dist等文件清除干净。相当于还原成远程的最新状态，重新拉取代码一般。
+	名词解释：
+	d 删除未被添加到git的路径中的文件。
+	f 强制运行。
+	x 删除忽略文件已经对git来说不识别的文件。
+
+	使用此命令前注意会将本地已修改的代码也清除，所以在使用前先保存自己的代码，避免误删除。
+
+# 回退代码
+	git reset --hard 目标版本号  目标版本号可以在log中或者仓库提交记录中找到就是一个commitID，使用此命令会将代码等回退到此版本
+	
 
 
 

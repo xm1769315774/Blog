@@ -9,13 +9,13 @@ module.exports=[//导航栏
       text: '大前端',//二级菜单
       items: [
         { items: [
-              {text:"JavaScript",link:"/frontEnd/JavaScript/"},//分组里边的东西
-              {text:"HTML",link:"/frontEnd/HTML/"},//分组里边的东西
-              {text:"CSS",link:"/frontEnd/CSS/"},//分组里边的东西
-              {text:"Vue",link:"/frontEnd/Vue/"},//分组里边的东西
-              {text:"React",link:"/frontEnd/React/"},//分组里边的东西
-              {text:"uni-app",link:"/frontEnd/uni-app/"},//分组里边的东西
-              {text:"TypeScript",link:"/frontEnd/TypeScript/"},//分组里边的东西
+              {text:"JavaScript",link:"/frontEnd/JavaScript/"},//JavaScript
+              {text:"HTML",link:"/frontEnd/HTML/"},//HTML
+              {text:"CSS",link:"/frontEnd/CSS/"},//CSS
+              {text:"Vue",link:"/frontEnd/Vue/"},//Vue
+              {text:"React",link:"/frontEnd/React/"},//React
+              {text:"uni-app",link:"/frontEnd/uni-app/"},//uni-app
+              {text:"TypeScript",link:"/frontEnd/TypeScript/"},//TypeScript
         ] },
       ]
     },
@@ -23,9 +23,9 @@ module.exports=[//导航栏
       text: '后端',//二级菜单
       items: [
         { items: [
-              {text:"NodeJS",link:"/backEnd/NodeJS/"},//分组里边的东西
-              {text:"MySQL",link:"/backEnd/MySQL/"},//分组里边的东西
-              {text:"Express",link:"/backEnd/Express/"},//分组里边的东西
+              {text:"NodeJS",link:"/backEnd/NodeJS/"},//NodeJS
+              {text:"MySQL",link:"/backEnd/MySQL/"},//MySQL
+              {text:"Express",link:"/backEnd/Express/"},//Express
         ] },
       ]
     },
@@ -33,8 +33,9 @@ module.exports=[//导航栏
       text: '其他',//二级菜单
       items: [
         { items: [
-              {text:"Markdown",link:"/other/Markdown/"},//分组里边的东西     
-              {text:"git",link:"/other/git/"},//分组里边的东西     
+              {text:"Markdown",link:"/other/Markdown/"},//Markdown     
+              {text:"git",link:"/other/git/"},//git     
+              {text:"tool",link:"/other/tool/"},//tool     
         ] },
       ]
     },

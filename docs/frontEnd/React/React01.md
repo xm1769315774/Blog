@@ -52,7 +52,7 @@ export default class Account extends Component {
 }
 
 ```
-注意：onClick可以理解为一个中间变量，点击事件发生后相当于调用了onClick(),由于changeStr是class类的方法，如果直接把class类的方法赋值给onClick就会导致this丢失，所以需要使用bind去借用this(改变this指向)
+注意：onClick可以理解为一个中间变量，点击事件发生后相当于调用了onClick(),而onClick是由右边直接赋值的，所以相当于直接调用了这个函数，而不是通过实例对象去调用的，由于changeStr是class类的方法，class类中的方法默认开启了局部的严格模式"use strict"，所以此时的this就是undefined，就会导致this丢失，所以需要使用bind去借用this(改变this指向)，bind会返回一个新的函数
 
 # props属性
 
