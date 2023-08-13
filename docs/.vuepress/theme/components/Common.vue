@@ -134,7 +134,7 @@ export default defineComponent({
       })
     }
     const hasPageKey = () => {
-      let pageKeys = root.$frontmatter.keys
+      let pageKeys = root?.$frontmatter?.keys
       if (!pageKeys || pageKeys.length === 0) {
         isHasPageKey.value = true
         return
@@ -148,7 +148,7 @@ export default defineComponent({
       isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
     }
     const handleLoading = () => {
-      const time = root.$frontmatter.home && sessionStorage.getItem('firstLoad') == undefined ? 1000 : 0
+      const time = root?.$frontmatter?.home && sessionStorage.getItem('firstLoad') == undefined ? 1000 : 0
       setTimeout(() => {
         firstLoad.value = false
         if (sessionStorage.getItem('firstLoad') == undefined) sessionStorage.setItem('firstLoad', false)
