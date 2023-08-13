@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "set NODE_OPTIONS=--openssl-legacy-provider & vuepress dev docs --temp .temp",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider & vuepress build docs",
+    "serve": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs --temp .temp",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
     "deploy": "bash deploy.sh"
   },
   "repository": {
@@ -20,25 +20,28 @@
   },
   "homepage": "https://github.com/xm1769315774/Blog#readme",
   "dependencies": {
-    "@vssue/api-github-v4": "^1.4.7",
-    "@vssue/vuepress-plugin-vssue": "^1.4.8",
-    "@vuepress/theme-default": "^1.8.2",
-    "countup.js": "^2.0.4",
-    "moment": "^2.29.1",
-    "vue-class-component": "^7.2.6",
+    "@vssue/api-github-v4": "1.4.7",
+    "@vssue/vuepress-plugin-vssue": "1.4.8",
+    "@vuepress/theme-default": "1.8.2",
+    "countup.js": "2.0.4",
+    "moment": "2.29.1",
+    "vue": "^2.7.14",
+    "vue-class-component": "7.2.6",
+    "vue-server-renderer": "^2.7.14",
     "vuepress-plugin-boxx": "0.0.7",
-    "vuepress-plugin-helper-live2d": "^1.0.2",
-    "vuepress-plugin-music-bar": "^3.7.6",
-    "vuepress-theme-reco": "^1.6.6"
+    "vuepress-plugin-helper-live2d": "1.0.2",
+    "vuepress-plugin-music-bar": "3.7.6",
+    "vuepress-theme-reco": "1.6.6"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-pwa": "^1.8.2",
-    "vuepress": "^1.8.2",
-    "vuepress-plugin-auto-sidebar": "^2.3.2",
-    "vuepress-plugin-dynamic-title": "^1.0.0",
-    "vuepress-plugin-flexsearch": "^0.2.0",
-    "vuepress-plugin-meting": "^0.2.3",
-    "vuepress-plugin-nuggets-style-copy": "^1.0.3"
+    "@vuepress/plugin-back-to-top": "1.8.2",
+    "@vuepress/plugin-pwa": "1.8.2",
+    "vue-template-compiler": "^2.7.14",
+    "vuepress": "1.8.2",
+    "vuepress-plugin-auto-sidebar": "2.3.2",
+    "vuepress-plugin-dynamic-title": "1.0.0",
+    "vuepress-plugin-flexsearch": "0.2.0",
+    "vuepress-plugin-meting": "0.2.3",
+    "vuepress-plugin-nuggets-style-copy": "1.0.3"
   }
 }
